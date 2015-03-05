@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = '';
+$database = 'silverstripe-training';
 
 require_once('conf/ConfigureFromEnv.php');
 
