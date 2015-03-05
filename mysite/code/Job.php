@@ -19,7 +19,21 @@ class Job extends DataObject
         'Status' => 'Status'
     );
 
+    private static $default_sort = 'Created DESC';
+
     public function getTitle() {
         return $this->Position . ' (#' . $this->Reference . ')';
+    }
+
+    public function canEdit($member = null) {
+        return Permission::check('CMS_ACCESS_JobAdmin');
+    }
+
+    public function canDelete($member = null) {
+        return Permission::check('CMS_ACCESS_JobAdmin');
+    }
+
+    public function canView($member = null) {
+        return Permission::check('CMS_ACCESS_JobAdmin');
     }
 }
